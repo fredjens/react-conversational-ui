@@ -1,0 +1,24 @@
+/* eslint-disable */
+
+import React from 'react';
+import styled from 'styled-components';
+import vars from '../variables';
+
+const UserInput = styled.input`
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+  border: 2px solid ${vars.baseColor};
+  border-radius: 5px;
+  transition: border 50ms;
+  font-family: ${vars.font};
+  align-self: flex-end;
+
+  &:focus {
+    outline: 0;
+    border: 2px solid ${vars.baseColor};
+  }
+`;
+
+export default UserInput;
