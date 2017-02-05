@@ -1,4 +1,4 @@
-# 🤖 React Conversational UI 🤖
+# 🤖 React Conversational UI
 
 A react component for conversational UI. Define your question and get the users input in return.
 
