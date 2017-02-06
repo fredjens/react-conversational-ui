@@ -1,12 +1,13 @@
 import React from 'react';
 
 import Conversation from '../containers/Conversation';
+Conversation.settings()
 
 const questions = [{
     text: 'Hello!',
   }, {
     text: 'What is your first name?',
-    value: 'firstName',
+    key: 'firstName',
   }, {
     text: 'Do you like this image?',
     image: 'https://unsplash.it/400/300/?random',

@@ -1,5 +1,6 @@
 /**
 * Settings for Conversations
+* NOTE: Set på context
 */
 
 const settings = {
