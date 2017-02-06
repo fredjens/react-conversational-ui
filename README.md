@@ -4,9 +4,9 @@ A react component for conversational UI. Define your question and get the users 
 
 <img src="https://cloud.githubusercontent.com/assets/4348783/22630685/cfdfe330-ebfe-11e6-8d4c-ea39a82b3bb4.gif" width="500" />
 
-### How to use
+## How to use
 
-#### :question: Define the questions
+### Define the questions
 The questions supports these field.
 * `text` - the text for your question (string) __(required)__
 * `image` - url to a image (string)
@@ -56,7 +56,7 @@ const theme = {
 };
 ```
 
-### Example
+### Example questions
 
 Questions:
 ```js
