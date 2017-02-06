@@ -1,5 +1,5 @@
 import React from 'react';
-import vars from '../variables';
+import { withTheme } from 'styled-components';
 
 import { MessageBlobBot, MessageBlobUser } from '../primitives/MessageBlob';
 import Avatar from '../primitives/Avatar';
@@ -7,14 +7,14 @@ import AnswerButton from '../primitives/AnswerButton';
 import Image from '../primitives/Image';
 
 const Message = (props) => {
-  const { message, active } = props;
+  const { message, active, theme } = props;
 
   return (
     <section>
       {message.sender === 'BOT' ?
         <div>
           <Avatar left>
-            {vars.bot}
+            {theme.bot}
           </Avatar>
           <MessageBlobBot>
             {message.text}
@@ -45,7 +45,7 @@ const Message = (props) => {
         :
         <div>
           <Avatar right>
-            {vars.user}
+            {theme.user}
           </Avatar>
           <MessageBlobUser>
             {message.text}
@@ -56,4 +56,4 @@ const Message = (props) => {
   );
 }
 
-export default Message;
+export default withTheme(Message);

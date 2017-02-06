@@ -1,9 +1,8 @@
 /**
-* Settings for Conversations
-* NOTE: Set på context
+* Default theme
 */
 
-const settings = {
+const theme = {
   blobColor: '#eee',
   userBlobColor: '#0066ff',
   user: '🙂',
@@ -12,6 +11,6 @@ const settings = {
   font: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
   height: '500px',
   width: '500px',
-}
+};
 
-export default settings;
+export default theme;

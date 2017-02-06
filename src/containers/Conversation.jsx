@@ -1,5 +1,11 @@
+/**
+* Conversation UI
+*/
+
 import React, { Component } from 'react';
 import autoBind from 'auto-bind';
+import { ThemeProvider } from 'styled-components';
+import theme from '../theme';
 
 import Container from '../primitives/Container';
 import UserInput from '../primitives/UserInput';
@@ -147,33 +153,35 @@ class Conversation extends Component {
     const { messages, userInput, answers, disableUserInput } = this.state;
 
     return (
-      <Container>
-        <MessageArea
-          innerRef={div => this.messageArea = div }
-        >
-        {messages.map((message, index) =>
-          <Message
-            key={index}
-            message={message}
-            answers={answers}
-            onButtonSelect={this.handleButtonSelect}
-            active={messages.length === index + 1}
-          />
-        )}
-        {this.state.loadingBot && <Loading bot/>}
-        {this.state.userInput.length > 0 && <Loading user/>}
-        </MessageArea>
-        <form onSubmit={e => this.submitUserInput(e)}>
-          <UserInput
-            type="text"
-            value={userInput}
-            innerRef={input => this.userInput = input }
-            onChange={e => this.handleUserInput(e)}
-            disabled={disableUserInput}
-          />
-          <SubmitButton>↩</SubmitButton>
-        </form>
-      </Container>
+      <ThemeProvider theme={this.props.theme || theme}>
+        <Container>
+          <MessageArea
+            innerRef={div => this.messageArea = div }
+          >
+          {messages.map((message, index) =>
+            <Message
+              key={index}
+              message={message}
+              answers={answers}
+              onButtonSelect={this.handleButtonSelect}
+              active={messages.length === index + 1}
+            />
+          )}
+          {this.state.loadingBot && <Loading bot/>}
+          {this.state.userInput.length > 0 && <Loading user/>}
+          </MessageArea>
+          <form onSubmit={e => this.submitUserInput(e)}>
+            <UserInput
+              type="text"
+              value={userInput}
+              innerRef={input => this.userInput = input }
+              onChange={e => this.handleUserInput(e)}
+              disabled={disableUserInput}
+            />
+            <SubmitButton>↩</SubmitButton>
+          </form>
+        </Container>
+      </ThemeProvider>
     );
   }
 }

@@ -2,11 +2,10 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import vars from '../variables';
 
 const AnswerButton = styled.button`
   display: inline-block;
-  border: 1px solid ${vars.userBlobColor};
+  border: 1px solid ${props => props.theme.userBlobColor};
   padding: .5rem 1rem;
   font-weight: 200;
   color: #222;
@@ -21,7 +20,7 @@ const AnswerButton = styled.button`
   &:focus,
   &:hover {
     outline: 0;
-    background: ${vars.userBlobColor};
+    background: ${props => props.theme.userBlobColor};
     color: #fff;
   }
 `;

@@ -4,13 +4,13 @@ A react component for conversational UI. Define your question and get the users 
 
 <img src="https://cloud.githubusercontent.com/assets/4348783/22630685/cfdfe330-ebfe-11e6-8d4c-ea39a82b3bb4.gif" width="500" />
 
-__work in progress__
-
 ### How to use
+
 #### 1. Import the component
-```
+```js
 import Conversation from '../containers/Conversation';
 ```
+
 #### 2. Define the questions
 The questions supports these field.
 * `text` - the text for your question (string) __(required)__
@@ -21,25 +21,15 @@ The questions supports these field.
 ### Example
 
 Questions:
-```
+```js
 const questions = [{
     text: 'Hello!',
   }, {
     text: 'What is your first name?',
-    value: 'firstName',
-  }, {
-    text: 'Do you like this image?',
-    image: 'https://unsplash.it/400/300/?random',
-    key: 'imageLike',
-    buttons: [{
-      text: 'Yes, looks great!',
-      value: 'yes',
-    }, {
-      text: 'No really...',
-      value: 'no',
-    }],
+    key: 'firstName',
   }, {
     text: 'How are you?',
+    key: 'emotion',
     buttons: [{
       text: 'Awesome!',
       value: 'great',
@@ -52,12 +42,22 @@ const questions = [{
     }, {
       text: 'Not so good...',
       value: 'bad',
-    }],
-    key: 'emotion',
+    }]
+  }, {
+    text: 'Do you like this image?',
+    key: 'imageLike',
+    image: 'https://unsplash.it/400/300/?random',
+    buttons: [{
+      text: 'Yes, looks great!',
+      value: 'yes',
+    }, {
+      text: 'No really...',
+      value: 'no',
+    }]
 }];
 ```
 React component
-```
+```js
 const App = (props) => {
   function getUserAnswers(answers) {
     console.log('answers', answers);
@@ -74,12 +74,25 @@ const App = (props) => {
 }
 ```
 
-### Settings
+### :nail_care: Themeing
 
-Comming soon...
+You can customize the size, colors, fonts and avatars.
 
-### Dependencies
+```js
+const theme = {
+  blobColor: 'cyan',
+  userBlobColor: 'deeppink',
+  user: '👀',
+  bot: '😾',
+  baseColor: '#ccc',
+  font: "'courier', monotype",
+  height: '500px',
+  width: '500px',
+};
+```
 
-* Create React App
+### :package: Dependencies
+
+* Create React App <3
 * Styled Components
 * Flexbox

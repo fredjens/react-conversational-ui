@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import vars from '../variables';
 
 const fadeIn = keyframes`
   from {
@@ -16,11 +15,11 @@ const fadeIn = keyframes`
 
 const MessageBlob = styled.div`
   padding: .75rem;
-  background: ${vars.blobColor};
+  background: ${props => props.theme.blobColor};
   display: inline-block;
   border-radius: 0 15px 15px 15px;
   font-weight: 200;
-  font-family: ${vars.font};
+  font-family: ${props => props.theme.font};
   margin-bottom: 1rem;
   animation: ${fadeIn} 250ms;
 `;
@@ -29,7 +28,7 @@ const MessageBlobBot = MessageBlob;
 
 const MessageBlobUser = styled(MessageBlob)`
   right: 0;
-  background: ${vars.userBlobColor};
+  background: ${props => props.theme.userBlobColor};
   color: #fff;
   float: right;
   border-radius: 15px 0 15px 15px;

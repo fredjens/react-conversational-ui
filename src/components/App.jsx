@@ -1,7 +1,16 @@
 import React from 'react';
-
 import Conversation from '../containers/Conversation';
-Conversation.settings()
+
+const theme = {
+  blobColor: 'cyan',
+  userBlobColor: 'deeppink',
+  user: '👀',
+  bot: '😾',
+  baseColor: '#ccc',
+  font: "'courier', monotype",
+  height: '500px',
+  width: '500px',
+};
 
 const questions = [{
     text: 'Hello!',
@@ -9,18 +18,8 @@ const questions = [{
     text: 'What is your first name?',
     key: 'firstName',
   }, {
-    text: 'Do you like this image?',
-    image: 'https://unsplash.it/400/300/?random',
-    key: 'imageLike',
-    buttons: [{
-      text: 'Yes, looks great!',
-      value: 'yes',
-    }, {
-      text: 'No really...',
-      value: 'no',
-    }],
-  }, {
     text: 'How are you?',
+    key: 'emotion',
     buttons: [{
       text: 'Awesome!',
       value: 'great',
@@ -33,8 +32,18 @@ const questions = [{
     }, {
       text: 'Not so good...',
       value: 'bad',
-    }],
-    key: 'emotion',
+    }]
+  }, {
+    text: 'Do you like this image?',
+    key: 'imageLike',
+    image: 'https://unsplash.it/400/300/?random',
+    buttons: [{
+      text: 'Yes, looks great!',
+      value: 'yes',
+    }, {
+      text: 'No really...',
+      value: 'no',
+    }]
 }];
 
 const App = (props) => {
@@ -47,6 +56,7 @@ const App = (props) => {
       <Conversation
         questions={questions}
         onEnded={getUserAnswers}
+        theme={theme}
       />
     </main>
   );

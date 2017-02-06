@@ -2,19 +2,18 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import vars from '../variables';
 
 const Container = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  max-width: ${vars.width};
-  height: ${vars.height};
+  max-width: ${props => props.theme.width};
+  height: ${props => props.theme.height};
   margin: 2rem;
   padding: 1rem;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid ${vars.baseColor};
+  border: 1px solid ${props => props.theme.baseColor};
   overflow: hidden;
 `;
 

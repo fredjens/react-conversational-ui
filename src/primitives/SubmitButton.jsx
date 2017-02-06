@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import vars from '../variables';
 
 const SubmitButton = styled.button`
   display: inline-block;
@@ -12,7 +11,7 @@ const SubmitButton = styled.button`
   bottom: 7%;
   background: none;
   border: 0;
-  color: ${vars.baseColor};
+  color: ${props => props.theme.baseColor};
 
   &:focus {
     outline: 0;
