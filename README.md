@@ -6,17 +6,55 @@ A react component for conversational UI. Define your question and get the users 
 
 ### How to use
 
-#### 1. Import the component
-```js
-import Conversation from '../containers/Conversation';
-```
-
-#### 2. Define the questions
+#### :question: Define the questions
 The questions supports these field.
 * `text` - the text for your question (string) __(required)__
 * `image` - url to a image (string)
 * `buttons` - if you want to have answer alternatives (array)
 * `key` - the key that will be returned with the questions. If not key defined the question will not be returned.
+
+### The React component
+The component take these props:
+* `questions` - an array of questions.
+* `onEnded` - function to return the user input when session ends.
+* `theme` - styles and settings (optional)
+
+```js
+import Conversation from '../containers/Conversation';
+
+const App = (props) => {
+  function getUserAnswers(answers) {
+    console.log('answers', answers);
+  }
+
+  return (
+    <div>
+      <Conversation
+        questions={questions}
+        onEnded={getUserAnswers}
+        theme={theme}
+      />
+    </div>
+  );
+}
+```
+
+### :nail_care: Themeing
+
+You can customize the size, colors, fonts and avatars.
+
+```js
+const theme = {
+  blobColor: 'cyan',
+  userBlobColor: 'deeppink',
+  user: '👀',
+  bot: '😾',
+  baseColor: '#ccc',
+  font: "'courier', monotype",
+  height: '500px',
+  width: '500px',
+};
+```
 
 ### Example
 
@@ -55,40 +93,6 @@ const questions = [{
       value: 'no',
     }]
 }];
-```
-React component
-```js
-const App = (props) => {
-  function getUserAnswers(answers) {
-    console.log('answers', answers);
-  }
-
-  return (
-    <main>
-      <Conversation
-        questions={questions}
-        onEnded={getUserAnswers}
-      />
-    </main>
-  );
-}
-```
-
-### :nail_care: Themeing
-
-You can customize the size, colors, fonts and avatars.
-
-```js
-const theme = {
-  blobColor: 'cyan',
-  userBlobColor: 'deeppink',
-  user: '👀',
-  bot: '😾',
-  baseColor: '#ccc',
-  font: "'courier', monotype",
-  height: '500px',
-  width: '500px',
-};
 ```
 
 ### :package: Dependencies
